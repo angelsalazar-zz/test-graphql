@@ -1,0 +1,17 @@
+import mongoose from 'mongoose';
+
+const {Schema} = mongoose;
+
+const UserSchema = new Schema ({
+	email : {
+		type : String,
+		required : true,
+		unique : true
+	},
+	name : {
+		type : String,
+		required : true
+	}
+}, { collection : 'User', timestamps : true });
+
+export default mongoose.model('User', UserSchema);
